@@ -25,7 +25,7 @@ void load_data_to_mem(const char *buffer, const int index)
 /* TODO: Load program and service routines into mem.    */
 /*                                                            */
 /**************************************************************/
-void load_program(char *program_filename) {                   
+void load_program(char *program_filename) {
     FILE *prog;
     int i = 0;
     char buffer[33];
@@ -60,7 +60,7 @@ void load_program(char *program_filename) {
 
     // 3rd: load the text and data binary to memory
     // TODO
-    
+
 
     fclose(prog);
 

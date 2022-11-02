@@ -34,7 +34,7 @@ int fetch(uint32_t pc)
 struct inst_t decode(int word)
 {
     struct inst_t inst;
-    
+
     return inst;
 }
 
