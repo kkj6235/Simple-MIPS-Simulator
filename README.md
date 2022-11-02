@@ -8,8 +8,7 @@
 
  This repository provides the skeleton codes to simulate the MIPS instructions. First, we recommend you to be familar with the code structure.
  The `proc.h` file defines the `struct MIPS32_porc_t` to model the MIPS processor and you can find the `struct inst_t` type how we represent the
- MIPS instructions. To simulate the main memory for the MIPS processor, we have the `mem.h` and `mem.c` files that support loading data and
- instructions to the simulated memory.
+ MIPS instructions. To simulate the main memory for the MIPS processor, we have the `mem.h` and `mem.c` files that support reading and writing data from/to the simulated memory. 
 
  Second, you may need to understand how the simulated MIPS processor and memory are configured. The `sce212sim.c` file includes the entry
  poit (main function) and initalize the system with the `void initialize(char *program_filename)` function. It loads the given  MIPS binary file
