@@ -28,7 +28,7 @@ void load_data_to_mem(const char *buffer, const int index)
 void load_program(char *program_filename) {
     FILE *prog;
     int i = 0;
-    char buffer[33];
+    char buffer[32 + 2]; // 32 + newline + null
 
     //to notifying data & text segment size
     int text_size = 0;
@@ -44,7 +44,7 @@ void load_program(char *program_filename) {
 
     /* Read in the program. */
     // 1st: read the size of text section
-    if (fgets(buffer, 33, prog) != NULL) {
+    if (fgets(buffer, 32 + 2, prog) != NULL) {
         //check text segment size
         text_size = str_to_int(buffer);
         g_processor.input_insts = text_size/4;
