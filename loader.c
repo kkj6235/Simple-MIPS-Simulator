@@ -56,11 +56,36 @@ void load_program(char *program_filename) {
 
     // 2nd: read the size of data section
     // TODO
+    if (fgets(buffer, 32+2, prog) != NULL) {
+        data_size = str_to_int(buffer);
+    } 
+    else {
+        printf("Error occured while loading %s\n", program_filename);
+        exit(EXIT_FAILURE);
+    }
 
 
     // 3rd: load the text and data binary to memory
     // TODO
-
+    for(int i=0;i<text_size/4;i++){
+        if (fgets(buffer, 32+2, prog) != NULL) {
+            load_inst_to_mem(buffer,i*4);
+        } 
+        else {
+            printf("Error occured while loading %s\n", program_filename);
+            exit(EXIT_FAILURE);
+        }
+    }
+    
+    for(int i=0;i<data_size/4;i++){
+        if (fgets(buffer, 32+2, prog) != NULL) {
+            load_data_to_mem(buffer,i*4);
+        } 
+        else {
+            printf("Error occured while loading %s\n", program_filename);
+            exit(EXIT_FAILURE);
+        }
+    }
 
     fclose(prog);
 
